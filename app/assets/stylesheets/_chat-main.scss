@@ -2,22 +2,20 @@
 
   .chat-main{
     float: left;
-    width: calc(100% - 400px);
+    width: calc(100% - 300px);
     height: 100%;
-    // padding: 0 40px;
 
     &__chat-header{
       height: 100px;
-      width: 900px;
       padding: 0 40px;
-      border-bottom: solid 1px #eeeeee;
+      border-bottom: solid 1px $chat_devide_line;
 
         &__group-info{
           float: left;
 
           &__current-group{
             font-size: 20px;
-            color: #333333;
+            color: #333;
             margin-top: 35px;
             margin-bottom: 15px;
           }
@@ -33,26 +31,24 @@
             margin-top: 28px;
             line-height: 40px;
             padding: 0 20px;
-            border: solid 1px #eeeeee;
+            border: solid 1px $chat_devide_line;
             color: $message_background_color;
         }
     }
     &__chat-message-area{
+      background-color: #f2f2f2;
       height: calc(100% - 186px);
-      // padding: 46px;
       padding: 0 40px;
       width: 900px;
-      // background-color: #AAAAAA;
 
       &__message-section{
         &__one-list{
-          margin-bottom: 40px;
           &__head{
             margin-bottom: 10px;
             &__user-name{
               float: left;
               margin-right: 10px;
-
+              text-align: center;
               font:{
                 size: 16px;
                 weight: bold;
@@ -61,6 +57,7 @@
             }
 
             &__date{
+              line-height: 24px;
               font:{
                 size: 12px;
                 color: $message_background_color;
@@ -69,6 +66,7 @@
           }
 
           &__message{
+            margin-bottom: 40px;
             font:{
               size: 14px;
               color: $post-color;
@@ -89,21 +87,21 @@
         clear: both;
       }
       &__input-form{
-        
+        box-sizing: border-box;
         &__textarea{
           float: left;
-          width: calc(100% - 155px);
+          width: calc(100% - 125px);
           height: 45px;
           border: none;
           padding: 0 10px;
-          // line-height: 20px;
+          box-sizing: border-box;
+          line-height: 50px;
         }
         &__send-btn{
           float: left;
           background-color: $message_background_color;
           margin-left: 15px;
-          line-height: 45px;
-          padding: 0 25px;
+          padding: 10px 25px;
           text-align: center;
           border: none;
           color: white;
