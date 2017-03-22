@@ -7,9 +7,9 @@
         %p.chat__side-bar__current-user-name__user-name ryo
         .chat__side-bar__current-user-name__icons
           = link_to '/', class: 'chat__side-bar__current-user-name__icons__icon' do
-            #{fa_icon "pencil-square-o"}
-          = link_to '/', class: "chat__side-bar__current-user-name__icons__icon" do
-            #{fa_icon  "cog"}
+            %i.fa.fa-pencil-square-o.fa-lg
+          = link_to '/', class: 'chat__side-bar__current-user-name__icons__icon' do
+            %i.fa.fa-cog.fa-lg
       %ul.chat__side-bar__groups-and-latest-messages
         %li.chat__side-bar__groups-and-latest-messages__one-group
           = link_to '/' do
@@ -52,7 +52,7 @@
         .chat-main__footer--clearfix
           %form.chat-main__footer__input-form
             %textarea{class: "chat-main__footer__input-form__textarea", placeholder: "type a message", row: "1"}
-            #{fa_icon "image"}
+            %i.fa.fa-image
             %input{class: "chat-main__footer__input-form__send-btn btn", type: "submit", value: "Send"}
 
 
