@@ -52,5 +52,6 @@ group :production do
   gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
 
+gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-sass'
