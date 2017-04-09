@@ -1,15 +1,14 @@
-.alert-info {
+.alert {
   width: 100%;
   height: 28px;
   color: white;
   text-align: center;
-  background-color: $message_background_color;
-}
 
-.alert-danger {
-  width: 100%;
-  height: 28px;
-  color: white;
-  text-align: center;
-  background-color: $message_background_color;
+  &-notice{
+    background-color: $message_background_color;
+  }
+
+  &-alert{
+    background-color: $message_background_color;
+  }
 }
