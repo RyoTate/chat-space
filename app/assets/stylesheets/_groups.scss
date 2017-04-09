@@ -178,7 +178,7 @@
       cursor: pointer;
 
       &--add {
-        color: #38aef0;
+        color: $message_background_color;
       }
 
       &--remove {
@@ -191,7 +191,7 @@
     display: inline-block;
     padding: 12px 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: $message_background_color;
     border: 0;
   }
 }
@@ -205,12 +205,12 @@
     display: inline-block;
     padding: 12px 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: $message_background_color;
     border: 0;
   }
 }
   .clearfix:after {
-      content: '';
-      display: block;
-      clear: both;
+    content: '';
+    display: block;
+    clear: both;
 }
