@@ -8,16 +8,15 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
-    @group.save
-    redirect_to root_path
+    review = current_user.reviews.new(review_params)
+    if review.save
+      redirect_to rool_path, notice: "グループを作成しました"
+    else
+      redirect_to new_group_path,  dander: "グループが保存できませんでした"
+    end
   end
 
   private
-  def post_params
-    params.require(:sample_form).permit(users: [])
-  end
-
   def group_params
     params.require(:group).permit(:name, { user_ids:[] })
   end
