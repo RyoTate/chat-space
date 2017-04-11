@@ -15,11 +15,8 @@
         .chat-group-form__search.clearfix
           .user-search-field.chat-group-form__input
             .chat-group-form__search.clearfix
-              - @users.each do |user|
-                %label
-                  = check_box_tag 'sample_form[user][]', user.name
-                  = user.name
-            #user-search-result
+              = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
+                = b.label { b.check_box + b.text }
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
