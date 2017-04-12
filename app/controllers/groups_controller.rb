@@ -11,7 +11,8 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to root_path, notice: "グループを作成しました"
     else
-      redirect_to new_group_path,  dander: "グループが保存できませんでした"
+      flash.now[:alert] = "グループが保存できませんでした"
+      render action: :new
     end
   end
 

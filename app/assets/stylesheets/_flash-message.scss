@@ -3,13 +3,12 @@
   height: 28px;
   color: $white;
   text-align: center;
-}
 
-.alert-notice{
+  &-notice{
   background-color: $blue;
-}
+  }
 
-.alert-danger{
+  &-alert{
   background-color: $red;
+  }
 }
-
