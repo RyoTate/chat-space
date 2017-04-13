@@ -1,15 +1,14 @@
-.alert-alert-notice {
+.alert {
   width: 100%;
   height: 28px;
-  color: white;
+  color: $white;
   text-align: center;
-  background-color: $message_background_color;
-}
 
-.alert-alert-error {
-  width: 100%;
-  height: 28px;
-  color: white;
-  text-align: center;
-  background-color: $message_background_color;
+  &-notice{
+  background-color: $blue;
+  }
+
+  &-alert{
+  background-color: $red;
+  }
 }
