@@ -1,0 +1,8 @@
+.chat-main__chat-message-area__message-section__one-list
+  .chat-main__chat-message-area__message-section__one-list__head
+    %p.chat-main__chat-message-area__message-section__one-list__head__user-name
+      = message.user.name
+    %p.chat-main__chat-message-area__message-section__one-list__head__date
+      = message.created_at
+  %p.chat-main__chat-message-area__message-section__one-list__message
+    = message.body

@@ -33,15 +33,7 @@
         = link_to 'Edit', edit_group_path(@group), class: 'chat-main__chat-header__edit-btn'
       .chat-main__chat-message-area
         %ul.chat-main__chat-message-area__message-section
-          - @group.messages.each do |message|
-            %li.chat-main__chat-message-area__message-section__one-list
-              .chat-main__chat-message-area__message-section__one-list__head
-                %p.chat-main__chat-message-area__message-section__one-list__head__user-name
-                  = message.user.name
-                %p.chat-main__chat-message-area__message-section__one-list__head__date
-                  = message.created_at
-              %p.chat-main__chat-message-area__message-section__one-list__message
-                = message.body
+        = render @messages
 
 
       .chat-main__footer
