@@ -16,8 +16,7 @@
               %p.chat__side-bar__groups-and-latest-messages__one-group__group-name
                 = group.name
                 - if group.messages.present?
-                  %p.chat__side-bar__groups-and-latest-messages__one-group__message
-                  = group.messages.order("created_at DESC").first.body
+                  %p.chat__side-bar__groups-and-latest-messages__one-group__message= group.messages.order("created_at DESC").first.body
                 - else
                   %p.chat__side-bar__groups-and-latest-messages__one-group__message まだメッセージがありません
 
