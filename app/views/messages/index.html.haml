@@ -19,8 +19,6 @@
                   %p.chat__side-bar__groups-and-latest-messages__one-group__message= group.messages.order("created_at DESC").first.body
                 - else
                   %p.chat__side-bar__groups-and-latest-messages__one-group__message まだメッセージがありません
-
-
     .chat-main
       .chat-main__chat-header
         .chat-main__chat-header__group-info
@@ -34,8 +32,6 @@
       .chat-main__chat-message-area
         %ul.chat-main__chat-message-area__message-section
         = render @messages
-
-
       .chat-main__footer
         .chat-main__footer--clearfix
           = form_for [@group, @message] do |f|
