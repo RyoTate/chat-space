@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_action :get_group, only: [:index, :create]
   def index
-    @groups = current_user.groups.includes(:users)
+    @groups = Group.includes(:users)
     @message = Message.new
     @messages = Message.where(group_id: params[:group_id]).order(created_at: :DESC).includes(:user)
     @users = @group.users
@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
 
   private
   def create_params
-    params.require(:message).permit(:body).merge(group_id: params[:group_id], user_id: current_user.id)
+    params.require(:message).permit(:body).merge(group_id: params[:group_id])
   end
 
   def get_group
