@@ -11,23 +11,17 @@
             %i.fa.fa-cog
       %ul.chat__side-bar__groups-and-latest-messages
         %li.chat__side-bar__groups-and-latest-messages__one-group
-          - @groups.each do |group|
-            = link_to group_messages_path(group.id) do
-              %p.chat__side-bar__groups-and-latest-messages__one-group__group-name
-                = group.name
-                - if group.messages.present?
-                  %p.chat__side-bar__groups-and-latest-messages__one-group__message= group.messages.order("created_at DESC").first.body
-                - else
-                  %p.chat__side-bar__groups-and-latest-messages__one-group__message まだメッセージがありません
+          = render @groups
     .chat-main
       .chat-main__chat-header
         .chat-main__chat-header__group-info
           %p.chat-main__chat-header__group-info__current-group
             = @group.name
-          %p.chat-main__chat-header__group-info__current-group-members
-            = "members:"
-            - @group.users.each do |user|
-              = user.name
+          %ul.chat-main__chat-header__group-info__current-group-members
+            %p.chat-main__chat-header__group-info__current-group-members
+              = "members:"
+              - @group.users.each do |user|
+                = user.name
         = link_to 'Edit', edit_group_path(@group), class: 'chat-main__chat-header__edit-btn'
       .chat-main__chat-message-area
         %ul.chat-main__chat-message-area__message-section
