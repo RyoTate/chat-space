@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pg', '~> 0.18'
   gem 'bullet'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -56,4 +57,3 @@ end
 
 gem 'devise'
 gem 'haml-rails'
-
