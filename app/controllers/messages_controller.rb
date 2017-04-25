@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_action :get_group, only: [:index, :create]
   def index
-    @groups = Group.includes(:users)
+    @groups = current_user.groups.includes(:users)
     @message = Message.new
     @messages = Message.where(group_id: params[:group_id]).order(created_at: :DESC).includes(:user)
     @users = @group.users
