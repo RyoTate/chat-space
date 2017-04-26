@@ -5,9 +5,9 @@
         %p.chat__side-bar__current-user-name__user-name
           = current_user.name
         .chat__side-bar__current-user-name__icons
-          = link_to new_group_path, class: "chat__side-bar__current-user-name__icons__icon" do
+          = link_to new_group_path, class: 'chat__side-bar__current-user-name__icons__icon' do
             %i.fa.fa-pencil-square-o
-          = link_to edit_user_registration_path, class: "chat__side-bar__current-user-name__icons__icon" do
+          = link_to edit_user_registration_path, class: 'chat__side-bar__current-user-name__icons__icon' do
             %i.fa.fa-cog
       %ul.chat__side-bar__groups-and-latest-messages
         %li.chat__side-bar__groups-and-latest-messages__one-group
