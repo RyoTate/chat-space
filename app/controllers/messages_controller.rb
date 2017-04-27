@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   def index
     @groups = current_user.groups.includes(:users)
     @message = Message.new
-    @messages = Message.current_group(params[:group_id]).ordered.includes(:user)
+    @messages = Message.current_group(params[:group_id]).last_created.includes(:user)
     @users = @group.users
   end
 
