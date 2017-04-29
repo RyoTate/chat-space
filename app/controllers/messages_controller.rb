@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :get_group, only: [:index, :create]
+
   def index
     @groups = current_user.groups.includes(:users)
     @message = Message.new
@@ -20,6 +21,7 @@ class MessagesController < ApplicationController
 
 
   private
+
   def create_params
     params.require(:message).permit(:body).merge(group_id: params[:group_id])
   end
