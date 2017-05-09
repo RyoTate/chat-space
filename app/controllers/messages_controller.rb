@@ -1,10 +1,8 @@
 class MessagesController < ApplicationController
-  before_action :get_group, only: [:index, :create]
+  before_action :get_group, :get_groups, :get_messages, only: [:index, :create]
 
   def index
-    @groups = current_user.groups.includes(:users)
     @message = Message.new
-    @messages = Message.current_group(params[:group_id]).last_created.includes(:user)
     @users = @group.users
   end
 
@@ -15,8 +13,6 @@ class MessagesController < ApplicationController
       redirect_to group_messages_path(@group)
     else
       flash.now[:alert] = "メッセージが保存できませんでした"
-      @groups = current_user.groups.includes(:users)
-      @messages = Message.current_group(params[:group_id]).last_created.includes(:user)
       render action: :index
     end
   end
@@ -30,5 +26,13 @@ class MessagesController < ApplicationController
 
   def get_group
     @group = Group.find(params[:group_id])
+  end
+
+  def get_groups
+    @groups = current_user.groups.includes(:users)
+  end
+
+  def get_messages
+    @messages = Message.current_group(params[:group_id]).last_created.includes(:user)
   end
 end
