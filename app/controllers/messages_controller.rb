@@ -15,6 +15,8 @@ class MessagesController < ApplicationController
       redirect_to group_messages_path(@group)
     else
       flash.now[:alert] = "メッセージが保存できませんでした"
+      @groups = current_user.groups.includes(:users)
+      @messages = Message.current_group(params[:group_id]).last_created.includes(:user)
       render action: :index
     end
   end
