@@ -11,12 +11,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'devise'
+gem 'haml-rails'
 
 group :development, :test do
   gem 'byebug'
   gem 'pg', '~> 0.18'
   gem 'bullet'
   gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.4.1"
 end
 
 group :development do
@@ -29,5 +33,6 @@ group :production do
   gem 'mysql2', '>= 0.3.13', '< 0.5'
 end
 
-gem 'devise'
-gem 'haml-rails'
+group :test do
+  gem 'faker'
+end
